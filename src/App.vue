@@ -2,9 +2,26 @@
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
+    <span v-if="auth.authenticated">
+      |
+      <router-link to="/profile">Profile</router-link>
+    </span>
   </div>
-  <router-view/>
+  <router-view />
 </template>
+
+<script lang="ts">
+import { defineComponent, inject } from 'vue'
+import AuthProperty from 'vue-auth0-plugin/dist/AuthProperty'
+
+export default defineComponent({
+  name: 'Profile',
+  setup() {
+    const auth = inject('auth') as AuthProperty
+    return { auth }
+  },
+})
+</script>
 
 <style>
 #app {
