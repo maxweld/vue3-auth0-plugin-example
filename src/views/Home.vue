@@ -15,7 +15,7 @@
 <script lang="ts">
 import { defineComponent, inject } from 'vue'
 import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
-import AuthProperty from 'vue-auth0-plugin/dist/AuthProperty'
+import AuthenticationProperties from 'vue-auth0-plugin/dist/AuthProperty'
 
 export default defineComponent({
   name: 'Home',
@@ -23,7 +23,7 @@ export default defineComponent({
     HelloWorld,
   },
   setup() {
-    const auth = inject('auth') as AuthProperty
+    const auth = inject('auth') as AuthenticationProperties
 
     const login = () => {
       auth.loginWithRedirect({})

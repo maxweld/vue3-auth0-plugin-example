@@ -14,12 +14,12 @@
 
 <script lang="ts">
 import { defineComponent, inject } from 'vue'
-import AuthProperty from 'vue-auth0-plugin/dist/AuthProperty'
+import AuthenticationProperties from 'vue-auth0-plugin/dist/AuthProperty'
 
 export default defineComponent({
   name: 'Profile',
   setup() {
-    const auth = inject('auth') as AuthProperty
+    const auth = inject('auth') as AuthenticationProperties
     return { auth }
   },
 })

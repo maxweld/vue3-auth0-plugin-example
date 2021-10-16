@@ -14,6 +14,5 @@ const auth0Options: Auth0ClientOptions = {
 
 const app = createApp(App)
 app.use(VueAuth0Plugin, auth0Options)
-app.provide('auth', app.config.globalProperties.$auth)
 app.use(router)
 app.mount('#app')
