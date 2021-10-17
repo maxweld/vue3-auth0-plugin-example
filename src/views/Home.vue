@@ -8,20 +8,16 @@
       <!-- show logout when authenticated -->
       <button v-if="auth.authenticated" @click="logout">Log out</button>
     </div>
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, inject } from 'vue'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
 import AuthenticationProperties from 'vue-auth0-plugin/dist/AuthProperty'
 
 export default defineComponent({
   name: 'Home',
-  components: {
-    HelloWorld,
-  },
+  components: {},
   setup() {
     const auth = inject('auth') as AuthenticationProperties
 
