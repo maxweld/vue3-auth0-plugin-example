@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import Profile from '@/views/Profile.vue'
+import ToDos from '@/views/ToDos.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
 import { AuthenticationGuard } from 'vue-auth0-plugin'
 
@@ -9,6 +10,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/todos',
+    name: 'ToDos',
+    component: ToDos,
+    beforeEnter: AuthenticationGuard,
   },
   {
     path: '/profile',

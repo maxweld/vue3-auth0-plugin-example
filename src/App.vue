@@ -4,18 +4,25 @@
     <router-link to="/about">About</router-link>
     <span v-if="auth.authenticated">
       |
+      <router-link to="/todos">ToDos</router-link>
+    </span>
+    <span v-if="auth.authenticated">
+      |
       <router-link to="/profile">Profile</router-link>
     </span>
   </div>
   <router-view />
+  <!-- <NavBar /> -->
 </template>
 
 <script lang="ts">
 import { defineComponent, inject } from 'vue'
 import AuthenticationProperties from 'vue-auth0-plugin/dist/AuthProperty'
+// import NavBar from '@/components/NavBar.vue'
 
 export default defineComponent({
   name: 'Profile',
+  // components: { NavBar },
   setup() {
     const auth = inject('auth') as AuthenticationProperties
     return { auth }
