@@ -22,7 +22,7 @@ import TodoFilters from '@/components/TodoFilters.vue'
 export default defineComponent({
   components: {
     TodoItem,
-    // TodoFilters
+    TodoFilters,
   },
   setup() {
     let type = ref('private')
